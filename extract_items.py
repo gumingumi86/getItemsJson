@@ -6,7 +6,7 @@ from PIL import Image
 
 VANILLA_JAR = "1.20.1.jar"  # 任意
 MODS_DIR = "mods"
-OUTPUT_DIR = "output"
+OUTPUT_DIR = ""
 IMAGE_DIR = os.path.join(OUTPUT_DIR, "images")
 
 os.makedirs(IMAGE_DIR, exist_ok=True)
@@ -75,7 +75,9 @@ def process_jar(jar_path, source_name):
                                 "id": item_id,
                                 "en": en_name,
                                 "jp": jp_name,
-                                "image": img_path
+                                "image": img_path,
+                                "category": category,
+                                "mod": modid
                             })
                         except Exception as e:
                             print(f"Failed to process image for {file}: {e}")
